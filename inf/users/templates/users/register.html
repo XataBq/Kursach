@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Register</h1>
+    <hr>
+    {% if form.errors %}
+    <p>{{ form.errors.error }}</p>
+    {% endif %}
+
+    <form action="{% url 'register' %}" method="post">
+        <p>Введите логин</p>
+        {{ form.username }}
+        <br>
+        <p>Введите email</p>
+        {{ form.email }}
+        <br>
+        <p>Введите пароль</p>
+        {{ form.password1 }}
+        <br>
+        <p>Введите пароль еще раз</p>
+        {{ form.password2 }}
+        <br>
+        <p>Введите Имя</p>
+        {{ form.first_name }}
+        <br>
+        <p>Введите Фамилию</p>
+        {{ form.last_name }}
+        {% csrf_token %}
+        <hr>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="{% url 'personal_account' %}" method="post">
+    {{ form }}
+    {% csrf_token %}
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+<br>
+{{user.first_name}}
+<br>
+{{user.email}}
+{{user.last_name}}
+<br>
+
+<h3><a href="{% url 'password_reset' %}">password reset</a></h3>
+<br>
+{% endblock %}

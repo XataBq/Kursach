@@ -1,0 +1,318 @@
+{% extends 'base.html' %}
+{% block content %}
+<style type="text/css">
+            .table td, .table th {
+    padding: .10rem;
+    vertical-align: top;
+    border-top: 1px solid #000000;
+    }
+
+</style>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">№</th>
+        <th scope="col">Your's</th>
+        <th scope="col">Correct</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        {% if answers.answer1 == variant.task1.answer %}
+        <th scope="row" bgcolor="#3abn" >1</th>
+        <td bgcolor="#3abn">{{ answers.answer1 }}</td>
+        <td bgcolor="3abn">{{ variant.task1.answer }}</td>
+        {% else %}
+        <th scope="row">1</th>
+        <td>{{ answers.answer1 }}</td>
+        <td>{{ variant.task1.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer2 == variant.task2.answer %}
+        <th scope="row" bgcolor="3abn">2</th>
+        <td bgcolor="3abn">{{ answers.answer2 }}</td>
+        <td bgcolor="3abn">{{ variant.task2.answer }}</td>
+        {% else %}
+        <th scope="row">2</th>
+        <td>{{ answers.answer2 }}</td>
+        <td>{{ variant.task2.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer3 == variant.task3.answer %}
+        <th scope="row" bgcolor="3abn">3</th>
+        <td bgcolor="3abn">{{ answers.answer3 }}</td>
+        <td bgcolor="3abn">{{ variant.task3.answer }}</td>
+        {% else %}
+        <th scope="row">3</th>
+        <td>{{ answers.answer3 }}</td>
+        <td>{{ variant.task3.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer4 == variant.task4.answer %}
+        <th scope="row" bgcolor="3abn">4</th>
+        <td bgcolor="3abn">{{ answers.answer4 }}</td>
+        <td bgcolor="3abn">{{ variant.task4.answer }}</td>
+        {% else %}
+        <th scope="row">4</th>
+        <td>{{ answers.answer4 }}</td>
+        <td>{{ variant.task4.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer5 == variant.task5.answer %}
+        <th scope="row" bgcolor="3abn">5</th>
+        <td bgcolor="3abn">{{ answers.answer5 }}</td>
+        <td bgcolor="3abn">{{ variant.task5.answer }}</td>
+        {% else %}
+        <th scope="row">5</th>
+        <td>{{ answers.answer5 }}</td>
+        <td>{{ variant.task5.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer6 == variant.task6.answer %}
+        <th scope="row" bgcolor="3abn">6</th>
+        <td bgcolor="3abn">{{ answers.answer6 }}</td>
+        <td bgcolor="3abn">{{ variant.task6.answer }}</td>
+        {% else %}
+        <th scope="row">6</th>
+        <td>{{ answers.answer6 }}</td>
+        <td>{{ variant.task6.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer7 == variant.task7.answer %}
+        <th scope="row" bgcolor="3abn">7</th>
+        <td bgcolor="3abn">{{ answers.answer7 }}</td>
+        <td bgcolor="3abn">{{ variant.task7.answer }}</td>
+        {% else %}
+        <th scope="row">7</th>
+        <td>{{ answers.answer7 }}</td>
+        <td>{{ variant.task7.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer8 == variant.task8.answer %}
+        <th scope="row" bgcolor="3abn">8</th>
+        <td bgcolor="3abn">{{ answers.answer8 }}</td>
+        <td bgcolor="3abn">{{ variant.task8.answer }}</td>
+        {% else %}
+        <th scope="row">8</th>
+        <td>{{ answers.answer8 }}</td>
+        <td>{{ variant.task8.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer9 == variant.task9.answer %}
+        <th scope="row" bgcolor="3abn">9</th>
+        <td bgcolor="3abn">{{ answers.answer9 }}</td>
+        <td bgcolor="3abn">{{ variant.task9.answer }}</td>
+        {% else %}
+        <th scope="row">9</th>
+        <td>{{ answers.answer9 }}</td>
+        <td>{{ variant.task9.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer10 == variant.task10.answer %}
+        <th scope="row" bgcolor="3abn">10</th>
+        <td bgcolor="3abn">{{ answers.answer10 }}</td>
+        <td bgcolor="3abn">{{ variant.task10.answer }}</td>
+        {% else %}
+        <th scope="row">10</th>
+        <td>{{ answers.answer10 }}</td>
+        <td>{{ variant.task10.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer11 == variant.task11.answer %}
+        <th scope="row" bgcolor="3abn">11</th>
+        <td bgcolor="3abn">{{ answers.answer11 }}</td>
+        <td bgcolor="3abn">{{ variant.task11.answer }}</td>
+        {% else %}
+        <th scope="row">11</th>
+        <td>{{ answers.answer11 }}</td>
+        <td>{{ variant.task11.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer12 == variant.task12.answer %}
+        <th scope="row" bgcolor="3abn">12</th>
+        <td bgcolor="3abn">{{ answers.answer12 }}</td>
+        <td bgcolor="3abn">{{ variant.task12.answer }}</td>
+        {% else %}
+        <th scope="row">12</th>
+        <td>{{ answers.answer12 }}</td>
+        <td>{{ variant.task12.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer13 == variant.task13.answer %}
+        <th scope="row" bgcolor="3abn">13</th>
+        <td bgcolor="3abn">{{ answers.answer13 }}</td>
+        <td bgcolor="3abn">{{ variant.task13.answer }}</td>
+        {% else %}
+        <th scope="row">13</th>
+        <td>{{ answers.answer13 }}</td>
+        <td>{{ variant.task13.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer14 == variant.task14.answer %}
+        <th scope="row" bgcolor="3abn">14</th>
+        <td bgcolor="3abn">{{ answers.answer14 }}</td>
+        <td bgcolor="3abn">{{ variant.task14.answer }}</td>
+        {% else %}
+        <th scope="row">14</th>
+        <td>{{ answers.answer14 }}</td>
+        <td>{{ variant.task14.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer15 == variant.task15.answer %}
+        <th scope="row" bgcolor="3abn">15</th>
+        <td bgcolor="3abn">{{ answers.answer15 }}</td>
+        <td bgcolor="3abn">{{ variant.task15.answer }}</td>
+        {% else %}
+        <th scope="row">15</th>
+        <td>{{ answers.answer15 }}</td>
+        <td>{{ variant.task15.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer16 == variant.task16.answer %}
+        <th scope="row" bgcolor="3abn">16</th>
+        <td bgcolor="3abn">{{ answers.answer16 }}</td>
+        <td bgcolor="3abn">{{ variant.task16.answer }}</td>
+        {% else %}
+        <th scope="row">16</th>
+        <td>{{ answers.answer16 }}</td>
+        <td>{{ variant.task16.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer17 == variant.task17.answer %}
+        <th scope="row" bgcolor="3abn">17</th>
+        <td bgcolor="3abn">{{ answers.answer17 }}</td>
+        <td bgcolor="3abn">{{ variant.task17.answer }}</td>
+        {% else %}
+        <th scope="row">17</th>
+        <td>{{ answers.answer17 }}</td>
+        <td>{{ variant.task17.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer18 == variant.task18.answer %}
+        <th scope="row" bgcolor="3abn">18</th>
+        <td bgcolor="3abn">{{ answers.answer18 }}</td>
+        <td bgcolor="3abn">{{ variant.task18.answer }}</td>
+        {% else %}
+        <th scope="row">18</th>
+        <td>{{ answers.answer18 }}</td>
+        <td>{{ variant.task18.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer19 == variant.task19.answer %}
+        <th scope="row" bgcolor="3abn">19</th>
+        <td bgcolor="3abn">{{ answers.answer19 }}</td>
+        <td bgcolor="3abn">{{ variant.task19.answer }}</td>
+        {% else %}
+        <th scope="row">19</th>
+        <td>{{ answers.answer19 }}</td>
+        <td>{{ variant.task19.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer20 == variant.task20.answer %}
+        <th scope="row" bgcolor="3abn">20</th>
+        <td bgcolor="3abn">{{ answers.answer20 }}</td>
+        <td bgcolor="3abn">{{ variant.task20.answer }}</td>
+        {% else %}
+        <th scope="row">20</th>
+        <td>{{ answers.answer20 }}</td>
+        <td>{{ variant.task20.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer21 == variant.task21.answer %}
+        <th scope="row" bgcolor="3abn">21</th>
+        <td bgcolor="3abn">{{ answers.answer21 }}</td>
+        <td bgcolor="3abn">{{ variant.task21.answer }}</td>
+        {% else %}
+        <th scope="row">21</th>
+        <td>{{ answers.answer21 }}</td>
+        <td>{{ variant.task21.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer22 == variant.task22.answer %}
+        <th scope="row" bgcolor="3abn">22</th>
+        <td bgcolor="3abn">{{ answers.answer22 }}</td>
+        <td bgcolor="3abn">{{ variant.task22.answer }}</td>
+        {% else %}
+        <th scope="row">22</th>
+        <td>{{ answers.answer22 }}</td>
+        <td>{{ variant.task22.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer23 == variant.task23.answer %}
+        <th scope="row" bgcolor="3abn">23</th>
+        <td bgcolor="3abn">{{ answers.answer23 }}</td>
+        <td bgcolor="3abn">{{ variant.task23.answer }}</td>
+        {% else %}
+        <th scope="row">23</th>
+        <td>{{ answers.answer23 }}</td>
+        <td>{{ variant.task23.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer24 == variant.task24.answer %}
+        <th scope="row" bgcolor="3abn">24</th>
+        <td bgcolor="3abn">{{ answers.answer24 }}</td>
+        <td bgcolor="3abn">{{ variant.task24.answer }}</td>
+        {% else %}
+        <th scope="row">24</th>
+        <td>{{ answers.answer24 }}</td>
+        <td>{{ variant.task24.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer25 == variant.task25.answer %}
+        <th scope="row" bgcolor="3abn">25</th>
+        <td bgcolor="3abn">{{ answers.answer25 }}</td>
+        <td bgcolor="3abn">{{ variant.task25.answer }}</td>
+        {% else %}
+        <th scope="row">25</th>
+        <td>{{ answers.answer25 }}</td>
+        <td>{{ variant.task25.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer26 == variant.task26.answer %}
+        <th scope="row" bgcolor="3abn">26</th>
+        <td bgcolor="3abn">{{ answers.answer26 }}</td>
+        <td bgcolor="3abn">{{ variant.task26.answer }}</td>
+        {% else %}
+        <th scope="row">26</th>
+        <td>{{ answers.answer26 }}</td>
+        <td>{{ variant.task26.answer }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if answers.answer27 == variant.task27.answer %}
+        <th scope="row" bgcolor="3abn">27</th>
+        <td bgcolor="3abn">{{ answers.answer27 }}</td>
+        <td bgcolor="3abn">{{ variant.task27.answer }}</td>
+        {% else %}
+        <th scope="row">27</th>
+        <td>{{ answers.answer27 }}</td>
+        <td>{{ variant.task27.answer }}</td>
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}

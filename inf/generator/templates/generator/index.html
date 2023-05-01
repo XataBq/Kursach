@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a class="sidebar-brand" href="{% url 'get_task' num=1 %}">Задание1</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=2 %}">Задание2</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=3 %}">Задание3</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=4 %}">Задание4</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=5 %}">Задание5</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=6 %}">Задание6</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=7 %}">Задание7</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=8 %}">Задание8</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=9 %}">Задание9</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=10 %}">Задание10</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=11 %}">Задание11</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=12 %}">Задание12</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=13 %}">Задание13</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=14 %}">Задание14</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=15 %}">Задание15</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=16 %}">Задание16</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=17 %}">Задание17</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=18 %}">Задание18</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=19 %}">Задание19</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=20 %}">Задание20</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=21 %}">Задание21</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=22 %}">Задание22</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=23 %}">Задание23</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=24 %}">Задание24</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=25 %}">Задание25</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=26 %}">Задание26</a>
+<a class="sidebar-brand" href="{% url 'get_task' num=27 %}">Задание27</a>
+<form method="post">
+    <div class="card">
+        <div class="card-header">
+            Построить вариант
+        </div>
+        <div class="card-body">
+            <p>Введите номер варианта, если хотите найти уже готовый, или оставьте поле пустым для генерации нового:</p>
+            {% csrf_token %}
+            {{ select_form }}
+            <br>
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">Построить вариант</button>
+        </div>
+    </div>
+</form>
+{% endblock %}

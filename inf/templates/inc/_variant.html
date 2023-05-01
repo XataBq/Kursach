@@ -1,0 +1,598 @@
+<h1><p>Вариант №{{ variant.pk }}</p></h1>
+<form method="post">
+    {% csrf_token %}
+    {% if selected_tasks.task1 %}
+        <div class="card">
+            <div class="card-header">
+                №1
+            </div>
+            <div class="card-body">
+                {{ form.non_field.errors }}
+                <p>{{ variant.task1|safe }}</p>
+                <div class="media">
+                    {% if variant.task1.photo %}
+                    <img src="{{ variant.task1.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                <label for="{{ form.answer1.is_for_label }}">Ответ:</label>
+                {{ form.answer1 }}
+                <div class="invalid-feedback">
+                    {{ form.answer1.errors }}
+                </div>
+            </div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task2 %}
+        <div class="card">
+            <div class="card-header">
+                №2
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task2|safe }}</p>
+                <div class="media">
+                    {% if variant.task2.photo %}
+                    <img src="{{ variant.task2.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer2.is_for_label }}">Ответ:</label>
+                {{ form.answer2 }}
+                <div class="invalid-feedback">
+                    {{ form.answer2.errors }}
+                </div>
+            </div>
+    </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task3 %}
+        <div class="card">
+            <div class="card-header">
+                №3
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task3|safe }}</p>
+                <div class="media">
+                    {% if variant.task3.photo %}
+                    <img src="{{ variant.task3.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer3.is_for_label }}">Ответ:</label>
+                {{ form.answer3 }}
+                <div class="invalid-feedback">
+                    {{ form.answer3.errors }}
+                </div>
+            </div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task4 %}
+        <div class="card">
+            <div class="card-header">
+                №4
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task4|safe }}</p>
+                <div class="media">
+                    {% if variant.task4.photo %}
+                    <img src="{{ variant.task4.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer4.is_for_label }}">Ответ:</label>
+                {{ form.answer4 }}
+                <div class="invalid-feedback">
+                    {{ form.answer4.errors }}
+                </div>
+            </div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task5 %}
+        <div class="card">
+            <div class="card-header">
+                №5
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task5|safe }}</p>
+                <div class="media">
+                    {% if variant.task5.photo %}
+                    <img src="{{ variant.task5.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer5.is_for_label }}">Ответ:</label>
+                {{ form.answer5 }}
+                <div class="invalid-feedback">
+                    {{ form.answer5.errors }}
+                </div>
+            </div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task6 %}
+        <div class="card">
+            <div class="card-header">
+                №6
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task6|safe }}</p>
+                <div class="media">
+                    {% if variant.task6.photo %}
+                    <img src="{{ variant.task6.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer6.is_for_label }}">Ответ:</label>
+                {{ form.answer6 }}
+                <div class="invalid-feedback">
+                    {{ form.answer6.errors }}
+                </div>
+            </div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task7 %}
+        <div class="card">
+            <div class="card-header">
+                №7
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task7|safe }}</p>
+                <div class="media">
+                    {% if variant.task7.photo %}
+                    <img src="{{ variant.task7.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer7.is_for_label }}">Ответ:</label>
+                {{ form.answer7 }}
+                <div class="invalid-feedback">
+                    {{ form.answer7.errors }}
+                </div>
+            </div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task8 %}
+        <div class="card">
+            <div class="card-header">
+                №8
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task8|safe }}</p>
+                <div class="media">
+                    {% if variant.task8.photo %}
+                    <img src="{{ variant.task8.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer8.is_for_label }}">Ответ:</label>
+                {{ form.answer8 }}
+                <div class="invalid-feedback">
+                    {{ form.answer8.errors }}
+                </div>
+            </div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task9 %}
+        <div class="card">
+            <div class="card-header">
+                №9
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task9|safe }}</p>
+                <div class="media">
+                    {% if variant.task9.photo %}
+                    <img src="{{ variant.task9.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer9.is_for_label }}">Ответ:</label>
+                {{ form.answer9 }}
+                <div class="invalid-feedback">
+                    {{ form.answer9.errors }}
+                </div>
+            </div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task10 %}
+        <div class="card">
+            <div class="card-header">
+                №10
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task10|safe }}</p>
+                <div class="media">
+                    {% if variant.task10.photo %}
+                    <img src="{{ variant.task10.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer10.is_for_label }}">Ответ:</label>
+                {{ form.answer10 }}
+                <div class="invalid-feedback">
+                    {{ form.answer10.errors }}
+                </div>
+            </div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task11 %}
+        <div class="card">
+            <div class="card-header">
+                №11
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task11|safe }}</p>
+                <div class="media">
+                    {% if variant.task11.photo %}
+                    <img src="{{ variant.task11.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer11.is_for_label }}">Ответ:</label>
+                {{ form.answer11 }}
+                <div class="invalid-feedback">
+                    {{ form.answer11.errors }}
+                </div>
+            </div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task12 %}
+        <div class="card">
+            <div class="card-header">
+                №12
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task12|safe }}</p>
+                <div class="media">
+                    {% if variant.task12.photo %}
+                    <img src="{{ variant.task12.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer12.is_for_label }}">Ответ:</label>
+                {{ form.answer12 }}
+                <div class="invalid-feedback">
+                    {{ form.answer12.errors }}
+                </div>
+            </div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task13 %}
+    <div class="card">
+            <div class="card-header">
+                №13
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task13|safe }}</p>
+                <div class="media">
+                    {% if variant.task13.photo %}
+                    <img src="{{ variant.task13.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer13.is_for_label }}">Ответ:</label>
+                {{ form.answer13 }}
+                <div class="invalid-feedback">
+                    {{ form.answer13.errors }}
+                </div>
+            </div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task14 %}
+        <div class="card">
+            <div class="card-header">
+                №14
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task14|safe }}</p>
+                <div class="media">
+                    {% if variant.task14.photo %}
+                    <img src="{{ variant.task14.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer14.is_for_label }}">Ответ:</label>
+                {{ form.answer14 }}
+                <div class="invalid-feedback">
+                    {{ form.answer14.errors }}
+                </div>
+            </div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task15 %}
+        <div class="card">
+            <div class="card-header">
+                №15
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task15|safe }}</p>
+                <div class="media">
+                    {% if variant.task15.photo %}
+                    <img src="{{ variant.task15.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer15.is_for_label }}">Ответ:</label>
+                {{ form.answer15 }}
+                <div class="invalid-feedback">
+                    {{ form.answer15.errors }}
+                </div>
+            </div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task16 %}
+        <div class="card">
+            <div class="card-header">
+                №16
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task16|safe }}</p>
+                <div class="media">
+                    {% if variant.task16.photo %}
+                    <img src="{{ variant.task16.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer16.is_for_label }}">Ответ:</label>
+                {{ form.answer16 }}
+                <div class="invalid-feedback">
+                    {{ form.answer16.errors }}
+                </div>
+            </div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task17 %}
+        <div class="card">
+            <div class="card-header">
+                №17
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task17|safe }}</p>
+                <div class="media">
+                    {% if variant.task17.photo %}
+                    <img src="{{ variant.task17.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer17.is_for_label }}">Ответ:</label>
+                {{ form.answer17 }}
+                <div class="invalid-feedback">
+                    {{ form.answer17.errors }}
+                </div>
+            </div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task18 %}
+        <div class="card">
+            <div class="card-header">
+                №18
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task18|safe }}</p>
+                <div class="media">
+                    {% if variant.task18.photo %}
+                    <img src="{{ variant.task18.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer18.is_for_label }}">Ответ:</label>
+                {{ form.answer18 }}
+                <div class="invalid-feedback">
+                    {{ form.answer18.errors }}
+                </div>
+            </div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task19 %}
+        <div class="card">
+            <div class="card-header">
+                №19
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task19|safe }}</p>
+                <div class="media">
+                    {% if variant.task19.photo %}
+                    <img src="{{ variant.task19.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer19.is_for_label }}">Ответ:</label>
+                {{ form.answer19 }}
+                <div class="invalid-feedback">
+                    {{ form.answer19.errors }}
+                </div>
+            </div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task20 %}
+        <div class="card">
+            <div class="card-header">
+                №20
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task20|safe }}</p>
+                <div class="media">
+                    {% if variant.task20.photo %}
+                    <img src="{{ variant.task20.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer20.is_for_label }}">Ответ:</label>
+                {{ form.answer20 }}
+                <div class="invalid-feedback">
+                    {{ form.answer20.errors }}
+                </div>
+            </div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task21 %}
+        <div class="card">
+            <div class="card-header">
+                №21
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task21|safe }}</p>
+                <div class="media">
+                    {% if variant.task21.photo %}
+                    <img src="{{ variant.task21.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer21.is_for_label }}">Ответ:</label>
+                {{ form.answer21 }}
+                <div class="invalid-feedback">
+                    {{ form.answer21.errors }}
+                </div>
+            </div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task22 %}
+        <div class="card">
+            <div class="card-header">
+                №22
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task22|safe }}</p>
+                <div class="media">
+                    {% if variant.task22.photo %}
+                    <img src="{{ variant.task22.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer22.is_for_label }}">Ответ:</label>
+                {{ form.answer22 }}
+                <div class="invalid-feedback">
+                    {{ form.answer22.errors }}
+                </div>
+            </div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task23 %}
+        <div class="card">
+            <div class="card-header">
+                №23
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task23|safe }}</p>
+                <div class="media">
+                    {% if variant.task23.photo %}
+                    <img src="{{ variant.task23.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer23.is_for_label }}">Ответ:</label>
+                {{ form.answer23 }}
+                <div class="invalid-feedback">
+                    {{ form.answer23.errors }}
+                </div>
+            </div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task24 %}
+        <div class="card">
+            <div class="card-header">
+                №24
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task24|safe }}</p>
+                <div class="media">
+                    {% if variant.task24.photo %}
+                    <img src="{{ variant.task24.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer24.is_for_label }}">Ответ:</label>
+                {{ form.answer24 }}
+                <div class="invalid-feedback">
+                    {{ form.answer24.errors }}
+                </div>
+            </div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task25 %}
+        <div class="card">
+            <div class="card-header">
+                №25
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task25|safe }}</p>
+                <div class="media">
+                    {% if variant.task25.photo %}
+                    <img src="{{ variant.task25.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer25.is_for_label }}">Ответ:</label>
+                {{ form.answer25 }}
+                <div class="invalid-feedback">
+                    {{ form.answer25.errors }}
+                </div>
+            </div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task26 %}
+        <div class="card">
+            <div class="card-header">
+                №26
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task26|safe }}</p>
+                <div class="media">
+                    {% if variant.task26.photo %}
+                    <img src="{{ variant.task26.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer26.is_for_label }}">Ответ:</label>
+                {{ form.answer26 }}
+                <div class="invalid-feedback">
+                    {{ form.answer26.errors }}
+                </div>
+            </div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if selected_tasks.task27 %}
+        <div class="card">
+            <div class="card-header">
+                №27
+            </div>
+            <div class="card-body">
+                <p>{{ variant.task27|safe }}</p>
+                <div class="media">
+                    {% if variant.task27.photo %}
+                    <img src="{{ variant.task27.photo.url }}" alt="" class="float-left mr-3">
+                    {% endif %}
+                </div>
+                {{ form.non_field.error }}
+                <label for="{{ form.answer27.is_for_label }}">Ответ:</label>
+                {{ form.answer27 }}
+                <div class="invalid-feedback">
+                    {{ form.answer27.errors }}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <br>
+</form>
