@@ -19,7 +19,7 @@ def index(request):
                 selected_tasks = selected_tasks_into_16(form2.cleaned_data)
                 if form.cleaned_data['variant']:
                     return HttpResponseRedirect(
-                        reverse('ready_var', kwargs={"pk": form.cleaned_data['variant'], "select": selected_tasks},))
+                        reverse('ready_var', kwargs={"pk": form.cleaned_data['variant'], "select": selected_tasks}, ))
                 else:
                     selected_tasks = selected_tasks_into_16(form2.cleaned_data)
                     return HttpResponseRedirect(reverse('gen', kwargs={"select": selected_tasks}))
@@ -61,7 +61,7 @@ def ready_var(request, pk, select, answer="On"):
         #     for key in answers:
         #         if answers[key] == '':
         #             answers[key] = 'None'
-          pass
+        pass
     else:
         form = AnswerForm()
     context = {'variant': variant, 'form': form, 'selected_tasks': selected_tasks}

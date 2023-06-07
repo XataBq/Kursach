@@ -2,8 +2,7 @@ from django import forms
 
 
 class VarForm(forms.Form):
-    variant = forms.IntegerField(widget=forms.NumberInput(attrs={'class': 'form-control'}), required=False,
-                                 label='Введите вариант')
+    variant = forms.IntegerField(widget=forms.NumberInput(attrs={'class': 'form-control'}), required=False)
 
 
 class TaskForm(forms.Form):

@@ -3,9 +3,9 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import View
 
-from users.forms import CustomUserCreationForm, CustomUserChangeForm, UserWebChangeForm
+from users.forms import CustomUserCreationForm, UserWebChangeForm
 from users.models import CustomUser
-from django.shortcuts import redirect
+from generator.models import Variant
 
 
 class SignUpView(View):
@@ -40,9 +40,14 @@ class PersonalAccount(View):
     # form_class = UserWebChangeForm(initial={"email":request.user.email})
 
     def get(self, request):
+        variants = []
+        if request.user.favorites.all():
+            for var in request.user.favorites.all():
+                variants.append(var.pk)
         context = {
             "form": UserWebChangeForm(initial={"email": request.user.email, "first_name": request.user.first_name,
-                                               "last_name": request.user.last_name})
+                                               "last_name": request.user.last_name}),
+            "favorites": variants
 
         }
         return render(request, self.template_name, context)

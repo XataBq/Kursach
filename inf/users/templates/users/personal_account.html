@@ -2,17 +2,23 @@
 
 {% block content %}
 <form action="{% url 'personal_account' %}" method="post">
-    {{ form }}
     {% csrf_token %}
+    {% for field in form %}
+    {{ field }}
+    {% endfor %}
+
+
     <button type="submit" class="btn btn-success">Submit</button>
-  </form>
-<br>
-{{user.first_name}}
-<br>
-{{user.email}}
-{{user.last_name}}
-<br>
+</form>
+
 
 <h3><a href="{% url 'password_reset' %}">password reset</a></h3>
 <br>
+<div>
+    <br>
+    <p>избранное:</p>
+    {% for i in favorites %}
+    <a class="sidebar-brand" href="{% url 'ready_var' pk=i select='7ffffff' %}">Вариант {{ i }}</a>
+    {% endfor %}
+</div>
 {% endblock %}

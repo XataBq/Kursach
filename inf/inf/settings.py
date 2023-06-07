@@ -21,6 +21,7 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 
 INSTALLED_APPS = [
+    'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -63,6 +64,16 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'inf.wsgi.application'
+ASGI_APPLICATION = 'inf.asgi.application'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
@@ -108,9 +119,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'static'
-STATICFILES_DIRS = [
-    BASE_DIR / 'inf/static'
-]
+
 
 MEDIA_ROOT = BASE_DIR / 'media'
 

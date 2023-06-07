@@ -31,18 +31,29 @@
 <form method="post">
     <div class="card">
         <div class="card-header">
-            Построить вариант
+            Построить вариантыыыыыыыыыыыыфыв
         </div>
         <div class="card-body">
             <p>Введите номер варианта, если хотите найти уже готовый, или оставьте поле пустым для генерации нового:</p>
+            <div class="choose_task">
+                {% csrf_token %}
+                {% for task in select_form %}
+                    {{ task.label }}
+                    {{ task }}
+                {% endfor %}
+                <br>
+            </div>
             {% csrf_token %}
-            {{ select_form }}
-            <br>
-            {% csrf_token %}
-            {{ form }}
+            {% for field in form %}
+                {{ field }}
+            {% endfor %}
             <br>
             <button type="submit" class="btn btn-primary btn-block">Построить вариант</button>
         </div>
     </div>
 </form>
+<style>
+    .choose_task {background: #000}
+    .input_var {background: #000 }
+</style>
 {% endblock %}
