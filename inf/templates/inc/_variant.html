@@ -596,3 +596,26 @@
     {% endif %}
     <br>
 </form>
+
+<script>
+    const chatSocket = new WebSocket(
+        'ws://' + window.location.host + '/ws/gen/'
+    );
+    chatSocket.onopen = function(e) {
+            chatSocket.send(JSON.stringify({
+                'variant': {{ variant.pk }}
+            }));
+        };
+    document.querySelector('#chat-message-submit').onclick = function(e) {
+            chatSocket.send(JSON.stringify({
+                'data': "Привет"
+            }));
+        };
+    chatSocket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            document.querySelector('#chat-log').value += (data.variant + '\n');
+        };
+    chatSocket.onclose = function(e) {
+            console.error('Chat socket closed unexpectedly');
+        };
+</script>

@@ -8,7 +8,7 @@ SECRET_KEY = 'django-insecure-ouy-m$nybz@zfzq@tr)#qqylk=dqrz^h!dyc$fou8n@lp#$dwh
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ["*"]
 
 CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
 CKEDITOR_UPLOAD_PATH = "uploads/"
@@ -67,10 +67,10 @@ WSGI_APPLICATION = 'inf.wsgi.application'
 ASGI_APPLICATION = 'inf.asgi.application'
 
 CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            "hosts": [('127.0.0.1', 6379)],
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("127.0.0.1", 6379)],
         },
     },
 }

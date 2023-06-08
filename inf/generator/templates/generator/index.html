@@ -52,8 +52,38 @@
         </div>
     </div>
 </form>
-<style>
-    .choose_task {background: #000}
-    .input_var {background: #000 }
-</style>
+{% if user.is_superuser %}
+<textarea id="chat-log" cols="100" rows="20"></textarea><br>
+<input id="chat-message-submit" type="button" value="Send">
+{% endif %}
+<script>
+    const chatSocket = new WebSocket(
+        'ws://' + window.location.host + '/ws/gen/'
+    );
+
+    chatSocket.onopen = function(e) {
+            chatSocket.send(JSON.stringify({
+                'return_dict': 'please'
+            }));
+        };
+
+    document.querySelector('#chat-message-submit').onclick = function(e) {
+            chatSocket.send(JSON.stringify({
+                'data': "Привет"
+            }));
+        };
+    chatSocket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            document.querySelector('#chat-log').value = ('');
+            for (const key in data.data){
+                document.querySelector('#chat-log').value += (
+                    key + ' ' + data.data[key] + '\n'
+                );
+            }
+
+        };
+    chatSocket.onclose = function(e) {
+            console.error('Chat socket closed unexpectedly');
+        };
+</script>
 {% endblock %}
