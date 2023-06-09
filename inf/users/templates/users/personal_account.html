@@ -1,24 +1,81 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <form action="{% url 'personal_account' %}" method="post">
-    {% csrf_token %}
-    {% for field in form %}
-    {{ field }}
+  <div class="main">
+    {% for i in form %}
+      {{ i.label }}
+      {{ i }}
     {% endfor %}
+  </div>
+  {% csrf_token %}
+  <br>
+  <button type="submit" class="btn btn-success">Подтвердить</button>
 
-
-    <button type="submit" class="btn btn-success">Submit</button>
 </form>
-
-
-<h3><a href="{% url 'password_reset' %}">password reset</a></h3>
-<br>
-<div>
-    <br>
-    <p>избранное:</p>
-    {% for i in favorites %}
-    <a class="sidebar-brand" href="{% url 'ready_var' pk=i select='7ffffff' %}">Вариант {{ i }}</a>
-    {% endfor %}
+<div class="pers_info">
+  {{user.first_name}}
+  {{user.last_name}}
+  {{user.email}}
 </div>
+
+<h3><a href="{% url 'password_reset' %}" class="password">password reset</a></h3>
+<br>
+
+<style>
+  .password {
+    text-decoration: none;
+    color: #3D3D3D;
+    font-family: 'Roboto';
+    transition: 0.3s linear;
+  }
+
+  .password:hover {
+    color: #378D3A;
+  }
+
+  .main {
+    margin-top: 30px;
+    display: block;
+    width: 200px;
+    height: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    background-color: #3D3D3D;
+  }
+
+  .form-control {
+        color: #E6E6E6;
+        border-radius: 10px;
+        border: 1px solid #378D3A;
+    }
+
+  .btn {
+    margin-top: -5px;
+    margin-bottom: 10px;
+    transition: 0.2s linear;
+    color: #E6E6E6;
+    padding: 5px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-family: 'Roboto';
+    border: 1px solid;
+    border: 0;
+    background-color: #3D3D3D;
+    border: 2px solid #378D3A;
+  }
+
+  .btn:hover {
+    background-color: #378D3A;
+  }
+
+  .pers_info {
+    width: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
 {% endblock %}

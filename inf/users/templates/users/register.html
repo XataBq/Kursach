@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Register</h1>
-    <hr>
-    {% if form.errors %}
-    <p>{{ form.errors.error }}</p>
-    {% endif %}
-
-    <form action="{% url 'register' %}" method="post">
+<h1>Регистрация</h1>
+{% if form.errors %}
+<p>{{ form.errors.error }}</p>
+{% endif %}
+<div class="main">
+    <form action="{% url 'register' %}" method="post" class="reg">
+        {% csrf_token %}
         <p>Введите логин</p>
         {{ form.username }}
         <br>
@@ -25,8 +25,57 @@
         <br>
         <p>Введите Фамилию</p>
         {{ form.last_name }}
-        {% csrf_token %}
-        <hr>
-        <button type="submit" class="btn btn-success">Submit</button>
+        <br>
+        <button type="submit" class="btn btn-success">Зарегистрироваться</button>
     </form>
+</div>
+
+<style>
+    .main {
+        overflow: hidden;
+        display: block;
+        text-align: center;
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        background-color: #3D3D3D;
+    }
+
+    .main p {
+        background-color: #3D3D3D;
+        font-size: 15px;    
+    }
+
+    .reg {
+        background-color: #3D3D3D;
+    }
+
+    .btn {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        transition: 0.2s linear;
+        color: #E6E6E6;
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 20px;
+        font-family: 'Roboto';
+        border: 1px solid;
+        border: 0;
+        background-color: #3D3D3D;
+        border: 2px solid #378D3A;
+    }
+
+    .btn:hover {
+        background-color: #378D3A;
+    }
+
+    .form-control {
+    color: #E6E6E6;
+    border-radius: 10px;
+    height: 35px;
+    margin-bottom: 10px;
+    border: 1px solid #378D3A;
+}
+</style>
 {% endblock %}

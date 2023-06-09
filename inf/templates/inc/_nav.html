@@ -4,13 +4,46 @@
   </a>
   {% if user.is_authenticated %}
   <a class="navbar-brand" href="{% url 'personal_account' %}">{{ user.first_name }} {{ user.last_name }}</a>
-    <a class="navbar-brand" href="{% url 'logout' %}">
-      Выход
-    </a>
+  <a class="navbar-brand" href="{% url 'logout' %}">
+    Выход
+  </a>
   {% else %}
-    <a class="navbar-brand" href="{% url 'login' %}">Login</a>
-    <a class="navbar-brand" href="{% url 'register' %}">Register</a>
-  {% endif %}
+    <a class="navbar-brand login" href="{% url 'login' %}">Войти</a>
+    <a class="navbar-brand" href="{% url 'register' %}">Регитрация</a><!--Можно ли переставить местами?-->
+    {% endif %}
 </nav>
+<style>
+  .navbar {
+    background-color: #3D3D3D;
+    height: 60px;
+    display: flex;  
+    justify-content: space-around;
+    border: 1px solid;
+    margin-right: auto;
+    margin-left: auto;
+    border: 0;
+    border-radius: 10px;
+  }
 
+  .navbar-brand {
+    background-color: #3D3D3D;
+    text-decoration: none;
+    color: #E6E6E6;
+    font-size: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-family: 'Roboto', sans-serif;
+    padding: 6px;
+    border-radius: 5px;
+    transition: 0.1s linear;
+    
+  }
 
+  .navbar-brand:hover {
+    background-color: #378D3A;
+  }
+
+  .login {
+    margin-left: 45px;
+  }
+</style>

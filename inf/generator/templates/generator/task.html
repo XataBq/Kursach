@@ -4,7 +4,7 @@
 {% for i, j in tasks.items %}
 <div class="card">
         <div class="card-header">
-            {{ j.title }}
+            {{ i. }}
         </div>
         <div class="card-body">
             <p>{{ j|safe }}</p>
@@ -12,8 +12,6 @@
                 {% if j.photo %}
                 <img src="{{ j.photo.url }}" alt="" class="float-left mr-3">
                 {% endif %}
-            {{ j.answer }}
-            {{ j.file }}
             </div>
         </div>
     </div>
