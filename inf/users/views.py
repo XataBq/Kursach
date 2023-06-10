@@ -40,10 +40,10 @@ class PersonalAccount(View):
     # form_class = UserWebChangeForm(initial={"email":request.user.email})
 
     def get(self, request):
-        variants = []
+        variants = {}
         if request.user.favorites.all():
             for var in request.user.favorites.all():
-                variants.append(var.pk)
+                variants[var.pk] = Variant.objects.get(pk=var.pk)
         context = {
             "form": UserWebChangeForm(initial={"email": request.user.email, "first_name": request.user.first_name,
                                                "last_name": request.user.last_name}),

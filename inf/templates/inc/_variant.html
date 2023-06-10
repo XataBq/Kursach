@@ -1,4 +1,4 @@
-<h1><p>Вариант №{{ variant.pk }}</p></h1>
+<h1>Вариант №{{ variant.pk }}</h1>
 <form method="post">
     {% csrf_token %}
     {% if selected_tasks.task1 %}
@@ -596,6 +596,7 @@
     {% endif %}
     <br>
 </form>
+<input id="chat-message-submit" type="button" value="Send">
 
 <script>
     const chatSocket = new WebSocket(
@@ -608,12 +609,35 @@
         };
     document.querySelector('#chat-message-submit').onclick = function(e) {
             chatSocket.send(JSON.stringify({
-                'data': "Привет"
+                'variant': {{ variant.pk }},
+                '1': document.querySelector("#id_answer1").value,
+                '2': document.querySelector("#id_answer2").value,
+                '3': document.querySelector("#id_answer3").value,
+                '4': document.querySelector("#id_answer4").value,
+                '5': document.querySelector("#id_answer5").value,
+                '6': document.querySelector("#id_answer6").value,
+                '7': document.querySelector("#id_answer7").value,
+                '8': document.querySelector("#id_answer8").value,
+                '9': document.querySelector("#id_answer9").value,
+                '10': document.querySelector("#id_answer10").value,
+                '11': document.querySelector("#id_answer11").value,
+                '12': document.querySelector("#id_answer12").value,
+                '13': document.querySelector("#id_answer13").value,
+                '14': document.querySelector("#id_answer14").value,
+                '15': document.querySelector("#id_answer15").value,
+                '16': document.querySelector("#id_answer16").value,
+                '17': document.querySelector("#id_answer17").value,
+                '18': document.querySelector("#id_answer18").value,
+                '19': document.querySelector("#id_answer19").value,
+                '20': document.querySelector("#id_answer20").value,
+                '21': document.querySelector("#id_answer21").value,
+                '22': document.querySelector("#id_answer22").value,
+                '23': document.querySelector("#id_answer23").value,
+                '24': document.querySelector("#id_answer24").value,
+                '25': document.querySelector("#id_answer25").value,
+                '26': document.querySelector("#id_answer26").value,
+                '27': document.querySelector("#id_answer27").value
             }));
-        };
-    chatSocket.onmessage = function(e) {
-            const data = JSON.parse(e.data);
-            document.querySelector('#chat-log').value += (data.variant + '\n');
         };
     chatSocket.onclose = function(e) {
             console.error('Chat socket closed unexpectedly');

@@ -439,7 +439,38 @@ class Variant(models.Model):
     task27 = models.ForeignKey(Task27, on_delete=models.PROTECT)
 
     def get_absolute_url(self):
-        return reverse('ready_var', kwargs={'pk': self.pk})
+        return reverse('ready_var', kwargs={'pk': self.pk, 'select': '7ffffff'})
+
+    def get_answers(self):
+        answers = dict()
+        answers['1'] = Task1.objects.get(pk=self.task1.pk).answer
+        answers['2'] = Task2.objects.get(pk=self.task2.pk).answer
+        answers['3'] = Task3.objects.get(pk=self.task3.pk).answer
+        answers['4'] = Task4.objects.get(pk=self.task4.pk).answer
+        answers['5'] = Task5.objects.get(pk=self.task5.pk).answer
+        answers['6'] = Task6.objects.get(pk=self.task6.pk).answer
+        answers['7'] = Task7.objects.get(pk=self.task7.pk).answer
+        answers['8'] = Task8.objects.get(pk=self.task8.pk).answer
+        answers['9'] = Task9.objects.get(pk=self.task9.pk).answer
+        answers['10'] = Task10.objects.get(pk=self.task10.pk).answer
+        answers['11'] = Task11.objects.get(pk=self.task11.pk).answer
+        answers['12'] = Task12.objects.get(pk=self.task12.pk).answer
+        answers['13'] = Task13.objects.get(pk=self.task13.pk).answer
+        answers['14'] = Task14.objects.get(pk=self.task14.pk).answer
+        answers['15'] = Task15.objects.get(pk=self.task15.pk).answer
+        answers['16'] = Task16.objects.get(pk=self.task16.pk).answer
+        answers['17'] = Task17.objects.get(pk=self.task17.pk).answer
+        answers['18'] = Task18.objects.get(pk=self.task18.pk).answer
+        answers['19'] = Task19.objects.get(pk=self.task19.pk).answer
+        answers['20'] = Task20.objects.get(pk=self.task20.pk).answer
+        answers['21'] = Task21.objects.get(pk=self.task21.pk).answer
+        answers['22'] = Task22.objects.get(pk=self.task22.pk).answer
+        answers['23'] = Task23.objects.get(pk=self.task23.pk).answer
+        answers['24'] = Task24.objects.get(pk=self.task24.pk).answer
+        answers['25'] = Task25.objects.get(pk=self.task25.pk).answer
+        answers['26'] = Task26.objects.get(pk=self.task26.pk).answer
+        answers['27'] = Task27.objects.get(pk=self.task27.pk).answer
+        return answers
 
     class Meta:
         verbose_name = 'Вариант'

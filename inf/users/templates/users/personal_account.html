@@ -14,10 +14,12 @@
   <button type="submit" class="btn btn-success">Подтвердить</button>
 
 </form>
-<div class="pers_info">
-  {{user.first_name}}
-  {{user.last_name}}
-  {{user.email}}
+
+<div>
+  <h1>Favorites</h1>
+  {% for i, j in favorites.items %}
+    <p><a href="{{ j.get_absolute_url }}">Вариант{{ i }}</a></p>
+  {% endfor %}
 </div>
 
 <h3><a href="{% url 'password_reset' %}" class="password">password reset</a></h3>

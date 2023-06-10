@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-<link rel="stylesheet" href="CSS/index.css">
 {% block content %}
 <form method="post">
     <div class="card">
@@ -58,9 +57,9 @@
     <a class="sidebar-brand" href="{% url 'get_task' num=27 %}">Задание 27</a>
 </div>
 
+
 {% if user.is_superuser %}
-<textarea id="chat-log" cols="100" rows="20"></textarea><br>
-<input id="chat-message-submit" type="button" value="Send">
+<div class="students_online"></div>
 {% endif %}
 <script>
     const chatSocket = new WebSocket(
@@ -73,20 +72,26 @@
             }));
         };
 
-    document.querySelector('#chat-message-submit').onclick = function(e) {
-            chatSocket.send(JSON.stringify({
-                'data': "Привет"
-            }));
-        };
     chatSocket.onmessage = function(e) {
             const data = JSON.parse(e.data);
-            document.querySelector('#chat-log').value = ('');
-            for (const key in data.data){
-                document.querySelector('#chat-log').value += (
-                    key + ' ' + data.data[key] + '\n'
-                );
+            document.querySelector('.students_online').innerHTML = `<table class="answers"></table>`;
+            for(const key in data.data) {
+                let row1 = document.createElement('tr');
+                row1.innerHTML = `<td colspan="28">${key}</td>`;
+                document.querySelector('.answers').appendChild(row1);
+                let row2 = document.createElement('tr');
+                let row3 = document.createElement('tr');
+                for(const key_answer in data.data[key]){
+                    let td2 = document.createElement('td');
+                    let td3 = document.createElement('td');
+                    td2.innerHTML = `${key_answer}`;
+                    td3.innerHTML = `${data.data[key][key_answer]}`;
+                    row2.append(td2);
+                    row3.append(td3);
+                }
+                document.querySelector('.answers').appendChild(row2);
+                document.querySelector('.answers').appendChild(row3);
             }
-
         };
     chatSocket.onclose = function(e) {
             console.error('Chat socket closed unexpectedly');
